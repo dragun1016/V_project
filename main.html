@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFTA_Main</title>
+      
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #top_bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #EBC284;
+            height: 55px;
+        }
+
+        .icon-container, .menu-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .icon-container {
+            margin-left: 240px;
+        }
+
+        .menu-container {
+            margin-right: 240px;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        #menu {
+            list-style-type: none;
+            display: flex;
+            gap: 24px;
+            margin-left: auto;
+            padding-right: 40px;
+        }
+        #main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 110px;
+        }
+        body {
+            background-color: #1E1E1E;
+        }
+
+        #main img {
+            max-width: 100%;
+            height: auto;
+        }
+        #search {
+            position: relative;
+            width: 700px;
+            margin-top: 65px;
+        }
+        input {
+            width: 100%;
+            border: 1px solid #bbb;
+            border-radius: 35px;
+            padding: 10px 12px;
+            font-size: 13px;
+            height: 55px;
+        }
+        #searchImg {
+            position : absolute;
+            width: 17px;
+            top: 18px;
+            right: 12px;
+            margin: 0px;
+        }
+        iframe {
+            width: 432px;
+            height: 243px;
+            border-radius: 15px;
+            margin-top: 5px;
+        }
+        h3 {
+            color: #B1B1B1;
+        }
+        #recommend {
+            margin-right: 5px;
+            margin-top: 25px;
+        }
+        #topranks {
+            margin-right: 95px;
+            margin-top: 25px;
+        }
+        .parent-container {
+        display: flex;
+        justify-content: center;
+        }
+
+        .child-container {
+            flex: 1;
+            padding: 20px;
+        }
+        .ranks {
+            list-style: none;
+            padding: 0px;
+        }
+        .ranks > li {
+            margin-top: 23px;
+            font-size: 20px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="top_bar">
+            <div class="icon-container">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" viewBox="0 0 30 28" fill="none">
+                        <path d="M13.4427 13.6368L15.1667 10.4424L16.8906 13.6368L15.1667 15.5298L13.4427 13.6368Z" fill="#1A1A1A"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.7157 23.2843 0 15 0C6.7157 0 0 6.7157 0 15C0 23.2843 6.7157 30 15 30ZM7.90143 15.8848C7.55524 19.5167 9.74854 20.9723 9.99481 20.9723V24.1667C8.72235 23.5751 6.15289 22.0607 6.05438 20.7356C5.95587 19.4105 6.01337 14.5834 6.05438 12.3354L7.28577 11.2706C7.77832 11.9805 8.98511 13.3529 9.8717 13.1636L9.90326 13.1569C11.0237 12.9179 13.3196 12.4283 13.3196 9.49591L12.5807 8.31281L15.1667 5L17.7526 8.31281L17.0137 9.49591C17.0137 12.4283 19.3096 12.9179 20.4301 13.1569L20.4616 13.1636C21.3482 13.3529 22.555 11.9805 23.0475 11.2706L24.2789 12.3354C24.32 14.5834 24.3774 19.4105 24.2789 20.7356C24.1804 22.0607 21.611 23.5751 20.3386 24.1667V20.9723C20.5848 20.9723 22.7781 19.5167 22.4319 15.8848C22.4479 16.5813 15.1667 17.5411 15.1667 17.5411C15.1667 17.5411 7.88544 16.5813 7.90143 15.8848ZM15.0435 20.144C14.592 20.3018 13.689 20.6409 13.689 20.7356C13.689 20.8302 14.592 21.5638 15.0435 21.9187C15.4951 21.5638 16.3981 20.8302 16.3981 20.7356C16.3981 20.6409 15.4951 20.3018 15.0435 20.144ZM9.99628 17.9414C9.9953 17.9656 9.99481 17.9899 9.99481 18.0144C9.99481 19.0599 10.877 19.9074 11.9651 19.9074C12.748 19.9074 13.4243 19.4686 13.742 18.8331L9.99628 17.9414ZM20.1452 18.0144C20.1452 17.9899 20.1447 17.9656 20.1438 17.9414L16.3981 18.8331C16.7158 19.4686 17.3921 19.9073 18.175 19.9073C19.2631 19.9073 20.1452 19.0599 20.1452 18.0144Z" fill="#1A1A1A"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="22" viewBox="0 0 62 22" fill="none">
+                        <path d="M13.196 0V2.51613H8.05625V18H5.18755V2.51613H0V0H13.196Z" fill="#1A1A1A"/>
+                        <path d="M28.5495 0V2.51613H19.0111V7.71774H27.0195V10.2097H19.0111V18H16.1424V0H28.5495Z" fill="#1A1A1A"/>
+                        <path d="M43.9653 0V2.51613H38.8256V18H35.9569V2.51613H30.7693V0H43.9653Z" fill="#1A1A1A"/>
+                        <path d="M54.9478 0L62 18H58.9162L57.0515 13.2339H49.3538L47.4653 18H44.3814L51.5532 0H54.9478ZM50.334 10.7177H56.0714L53.2505 3.53226L50.334 10.7177Z" fill="#1A1A1A"/>
+                      </svg>
+                </a>
+            </div>
+            <nav>
+                <ul id="menu" class="menu-container">
+                    <li><a href="#">전적 찾기</a></li>
+                    <li><a href="#">증강체 찾기</a></li>
+                    <li><a href="#">조합 찾기</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <div id="main">
+        <img src="./Images/maintext.png" alt="">
+        <form id="search" action="mainSv.py" method="get">
+            <input type="text" placeholder="닉네임으로 전적 검색하기">
+            <img id="searchImg" src="./Images/search.png" alt="">
+        </form>
+        <div class="parent-container">
+            <div class="child-container" id="recommend">
+                <h3>추천 공략 영상</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XcyphXlMbZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="child-container" id="topranks">
+                <h3>Top 5 Players</h3>
+                <ul class="ranks" id="rankList">
+                    <li id="rank"></li>
+                    <li id="rank">2.who</li>
+                    <li id="rank">3.who</li>
+                    <li id="rank">4.who</li>
+                    <li id="rank">5.who</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Top 5 Players 섹션에 데이터를 표시하는 함수
+    function displayTopPlayers(players) {
+        const rankList = document.getElementById('rankList');
+        
+        // 먼저 기존의 빈 리스트 아이템을 모두 제거
+        while (rankList.firstChild) {
+            rankList.removeChild(rankList.firstChild);
+        }
+
+        // API에서 가져온 데이터를 기반으로 리스트 아이템 생성
+        players.forEach((player, index) => {
+            const li = document.createElement('li');
+            li.classList.add('rank');
+            li.textContent = `${index}. ${player.summonerName}`;
+            rankList.appendChild(li);
+        });
+    }
+
+    // 라이엇 API 호출 및 데이터 가져오기
+    console.log(fetch("127.0.0.1:8000/rankers").json())
+</script>
+</html>
