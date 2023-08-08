@@ -9,6 +9,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost:5500",
+    "*"
 ]
 
 app.add_middleware(
@@ -22,7 +23,7 @@ app.add_middleware(
 @app.get("/rankers")
 def read_item():
     pp = pprint.PrettyPrinter(indent=4)
-    api_key = 'LOL'
+    api_key = 'RGAPI-67bfa4b0-7411-4d39-a638-834460fe1545'
     request_header = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
         "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",

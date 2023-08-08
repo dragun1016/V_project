@@ -188,6 +188,9 @@
     }
 
     // 라이엇 API 호출 및 데이터 가져오기
-    console.log(fetch("127.0.0.1:8000/rankers").json())
+    fetch("http://127.0.0.1:8000/rankers").then(e => e.json().then(e => 
+        //여기서 코드짜면됨
+        e["arr"]
+    ));
 </script>
 </html>
