@@ -338,9 +338,18 @@ function renderChampions(filterCost) {
     const championName = document.createElement('div');
     championName.className = 'champion-name';
     championName.textContent = champion.name;
+
+    championContainer.draggable=true
     championContainer.appendChild(championName);
+
+    // let championHtml = `
+    //   <div class="champion-container" draggable="true">
+    //     <img src="images/champion/${champion.name}.png" alt="champion.name"/>
+    //     <div class="champion-name">${champion.name}</div>
+    //   </div>
+    // `
     
-    championGrid.appendChild(championContainer);
+    // championGrid.appendChild(championHtml);
   });
 }
 
@@ -362,6 +371,7 @@ function renderChampionsBySynergy(filterSynergy) {
     championName.textContent = champion.name;
     championContainer.appendChild(championName);
     
+    championContainer.draggable=true
     championGrid.appendChild(championContainer);
   });
 }
