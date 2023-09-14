@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인패이지</title>
+    <link rel="stylesheet" href="style/sns.css">
+</head>
+<body>
+    <header>
+        <h1>DISNS</h1>
+    </header>
+    <div style="margin-bottom: 75px;"></div>
+
+    <style>
+
+header{
+position: fixed;
+display: flex;
+z-index: 999999;
+
+height: 75px;
+width: 100%;
+background-color: rgb(132, 0, 255);
+align-items: center;
+
+box-shadow: 0px -3px 10px 0px black;
+}
+    
+        header > h1{
+            color: white;
+            margin-left: 100px;
+            font-size: 40px;
+        }
+    
+        nav > a{
+            padding-left: 50px;
+            color: white;
+            text-decoration: none;
+        }
+    
+
+    </style>
+
+    <main>
+<nav id="follower">
+    <div onclick="userPage(0)">
+        <img src="svgs/compass.svg">
+        <h1>내 정보</h1>
+    </div>
+    <div onclick="userPage(1)">
+        <img src="https://images-ext-1.discordapp.net/external/aa_bfM2ExJjwecgrOThs_AzVRwOcOXqATqP1qCvrKGQ/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/577266050769485844/edb37a0f91e84d8204a1458bb97d3317.png">
+        <h1>Swift</h1>
+    </div>
+    <div onclick="userPage(2)">
+        <img src="https://images-ext-1.discordapp.net/external/aa_bfM2ExJjwecgrOThs_AzVRwOcOXqATqP1qCvrKGQ/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/577266050769485844/edb37a0f91e84d8204a1458bb97d3317.png">
+        <h1>Kotlin</h1>
+    </div>
+    <div onclick="userPage(3)">
+        <img src="https://images-ext-1.discordapp.net/external/aa_bfM2ExJjwecgrOThs_AzVRwOcOXqATqP1qCvrKGQ/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/577266050769485844/edb37a0f91e84d8204a1458bb97d3317.png">
+        <h1>Python</h1>
+    </div>
+</nav>
+<article>
+
+</article>
+    </main>
+
+
+
+</body>
+</html>
+
+
+<script
+src="https://code.jquery.com/jquery-3.6.1.min.js"
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+crossorigin="anonymous"></script>
+
+<script src="script/index.js"></script>
+<script src="https://twemoji.maxcdn.com/v/14.0.2/twemoji.min.js" integrity="sha384-32KMvAMS4DUBcQtHG6fzADguo/tpN1Nh6BAJa2QqZc6/i0K+YPQE+bWiqBRAWuFs" crossorigin="anonymous"></script>
+<script>twemoji.parse(document.body)</script>
+
+<script>
+    sleep = (sec) => {
+        return new Promise(res => setTimeout(res, sec));
+    }
+    let url = new URL(location.href);
+    window.onload= async()=>{
+        let followers = document.getElementById("follower");
+        for (i = 0;i<followers.childElementCount;i++){
+            followers.children[i].style.animationName = "leftToRight";
+            followers.children[i].style.opacity = "1";
+            if (url.searchParams.get("id") == null){
+                followers.children[0].style.opacity = "0.5";
+                followers.children[0].id = "clickIt";
+            }
+            if (url.searchParams.get("id") == i){
+                followers.children[i].style.opacity = "0.5";
+                followers.children[i].id= "clickIt";
+            }
+
+            await sleep(100);
+        }
+    }
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('id');
+const article = document.querySelector("article");
+console.log(myParam);
+if (myParam == 0) {
+article.innerHTML = `<section>
+    <h1>박선후</h1>
+    <h2>SRIHS SW 118th 🎃 🎃</h2>
+
+    <div class = "imgs">
+        <img src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzAxMDdfMjEz%2FMDAxNDgzNzkwODE1NTUz.hIH_yBBMIFpwIAabnLHOeKRU6nhF5TnPIAgfvyICBk4g.vQOYb9dBwGrlKpATXBbNqTKZuXPDM7CVyaA8sZa67vog.PNG.jungchan5929%2Fswift-og.png&type=sc960_832"/>
+        <img src = "https://search.pstatic.net/sunny/?src=http%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fpapirus-team%2Fpapirus-apps%2F256%2Fandroidstudio-icon.png&type=sc960_832"/>
+        <img src = "https://search.pstatic.net/sunny/?src=https%3A%2F%2Fraw.githubusercontent.com%2FWhinarn%2Fvscode-python-auto-venv%2Fmaster%2Fimages%2Flogo.png&type=sc960_832"/>
+        <img src = "https://search.pstatic.net/sunny/?src=https%3A%2F%2Fstatic.slickdealscdn.com%2Fattachment%2F3%2F0%2F2%2F2%2F8%2F9%2F3%2F1%2F13685024.attach&type=sc960_832"/>
+        <img src = "https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fe2%2F99%2Fd2%2Fe299d27cd99f3fa17299d3184dc306c0.jpg&type=sc960_832"/>
+        
+    </div>
+
+    <div class = "user">
+        <img src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20151224_145%2Feb4516_1450941893774Ee7Nr_PNG%2Fg.PNG&type=sc960_832"/>
+        StarLas #7777
+    </div>
+
+    <b class = "reaction" count = "1000">⭐</b>
+</section>
+<section>
+    <h1>Instagram</h1>
+    <h2>p_sh.sla</h2>
+
+
+    <div class = "user">
+        <img src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20151224_145%2Feb4516_1450941893774Ee7Nr_PNG%2Fg.PNG&type=sc960_832"/>
+        StarLas #7777
+    </div>
+
+    <b class = "" count = "7777">⭐</b>
+</section>
+<section>
+    <h1>Phone-Number</h1>
+    <h2>010-4109-4255</h2>
+
+
+    <div class = "user">
+        <img src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20151224_145%2Feb4516_1450941893774Ee7Nr_PNG%2Fg.PNG&type=sc960_832"/>
+        StarLas #7777
+    </div>
+
+    <b class = "" count = "9999">⭐</b>
+</section>
+<section>
+    <h1>LOL_Tier</h1>
+    <h2>Iron_1</h2>
+
+
+    <div class = "user">
+        <img src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20151224_145%2Feb4516_1450941893774Ee7Nr_PNG%2Fg.PNG&type=sc960_832"/>
+        StarLas #7777
+    </div>
+
+    <b class = "" count = "-999">⭐</b>
+</section>`;
+}
+if (myParam == 1) {
+article.innerHTML = `<section>
+    <h1>Swift</h1>
+    <h2>Xcode</h2>
+
+
+    <div class = "user">
+        <p>SwiftUI 란? SwiftUI는 <strong>모든 애플 플랫폼(iOS, iPadOS, macOS, watchOS, tvOS)에서 사용자 인터페이스를 만들 수 있게 해주는 새로운 개발 패러다임</strong>입니다. 쉽게 말해, 한번의 개발로 모든 애플 기기의 사용자 인터페이스를 만들 수 있게 해줍니다.</p>
+    </div>
+
+    <b class = "" count = "999">⭐</b>
+</section>`;
+}
+    if (myParam == 2) {
+        article.innerHTML = `<section>
+                <h1>Kotlin</h1>
+                <h2>Android_Studio</h2>
+
+
+                <div class = "user">
+                    <p><strong>표현력이 높고 간결함:</strong> 적은 노력으로 많은 작업을 할 수 있습니다. 상용구 코드를 적게 사용하면서도 아이디어를 풍부하게 표현할 수 있습니다. Kotlin을 사용하는 전문 개발자 중 67%가 Kotlin을 통해 생산성이 높아졌다고 말합니다.</p>
+                    <p><strong>더 안전한 코드: </strong>Kotlin에는 null 포인터 예외와 같은 일반적인 프로그래밍 실수를 방지하는 데 도움이 되는 여러 언어 기능이 있습니다. Kotlin 코드가 포함된 Android 앱은 다운될 가능성이 20% 낮습니다.</p>
+                    <p><strong>호환성:</strong> Kotlin에서 자바 기반 코드를 호출하거나 자바 기반 코드에서 Kotlin을 호출합니다. Kotlin은 자바 프로그래밍 언어와 100% 호환되므로 프로젝트에서 Kotlin을 원하는 만큼 사용할 수 있습니다.</p>
+                    <p><strong>구조화된 동시 실행: </strong>Kotlin 코루틴을 사용하면 비동기 코드를 차단 코드처럼 쉽게 사용할 수 있습니다. 코루틴은 네트워크 호출부터 로컬 데이터 액세스에 이르기까지 백그라운드 작업 관리를 크게 단순화합니다.</p>
+                </div>
+
+                <b class = "" count = "999">⭐</b>
+            </section>`;
+    }
+    if (myParam == 3) {
+        article.innerHTML = `<section>
+                <h1>Python</h1>
+                <h2>Visual Studio Code</h2>
+
+
+                <div class = "user">
+                    <p>파이썬(영어: Python)은 1991년 네덜란드계 소프트웨어 엔지니어인 귀도 반 로섬이 발표한 고급 프로그래밍 언어로, '인터프리터를 사용하는 객체지향 언어'이자 플랫폼에 독립적인, 동적 타이핑(dynamically typed) 대화형 언어이다.</p>
+                </div>
+
+                <b class = "" count = "999">⭐</b>
+            </section>`;
+    }
+</script>

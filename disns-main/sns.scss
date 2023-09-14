@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    overflow-x: hidden;
+}
+$backgroundColor:rgb(231, 231, 231);
+$perple: rgb(132, 0, 255);
+$blue: rgb(0, 140, 255);
+$blueAlpha: rgba(0, 140, 255, 0.473);
+$nav: 300px;
+$navmg: $nav+50;
+
+
+body{
+    background-color: $backgroundColor;
+}
+
+
+img[alt=⭐]{
+    width: 15px;
+}
+
+main{
+    display: flex;
+}
+
+nav[id=follower]{
+    position: fixed;
+    width: $nav;
+    height: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    background-color: rgba(180, 180, 180, 0.274);
+    backdrop-filter: blur();
+
+> div{
+display: flex;
+align-items: center;
+border-radius: 10px;
+padding: 10px;
+margin-top: 15px;
+width: 90%;
+background-color: white;
+transition: all .3s;
+
+/* transform: translateX(-550px); */
+cursor: pointer;
+opacity: 0;
+animation-duration: .5s;
+animation-timing-function: cubic-bezier(0.2 , 0.5 , 0.6 , 1);   
+
+> img{
+    border-radius: 100%;
+    width: 50px;
+}
+
+> h1{
+    padding-left: 10px;
+    color: black;
+}
+}
+> div:hover{
+transform: rotate(2deg);
+}
+> div[id=clickIt]{
+cursor: no-drop;
+}
+> div[id=clickIt]:hover{
+transform: rotate(0deg);
+}
+
+
+    &::before{
+        content: '';
+        position: absolute;
+        background-image: linear-gradient(45deg , rgb(0, 174, 255) , rgb(153, 0, 255));
+        width: 500px;
+        height: 500px;
+        z-index: -1000;
+        filter: blur(10px);
+        transform: translateX(-300px) translateY(-100px);
+        
+        border-radius: 50px;
+        transform: rotateZ(405deg);
+        
+        animation-name: follower-anime;
+        animation-duration: 3s;
+        /* animation-iteration-count: infinite; */
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    
+}
+
+
+@keyframes rainbow {
+0%{
+filter: hue-rotate(0deg)
+}
+100%{
+filter: hue-rotate(360deg)
+}
+}
+
+@keyframes leftToRight {
+0%{
+transform: translateX(-550px);
+}
+70%{
+transform: translateX(20px);
+}
+80%{
+transform: translateX(15px);
+}
+100%{
+transform: translateX(0px);
+}
+}
+
+@keyframes follower-anime{
+0%{
+border-radius: 50px;
+transform: rotateZ(45deg);
+}
+100%{
+border-radius: 50px;
+transform: rotateZ(405deg);
+}
+}
+
+article{
+margin-top: 10px;
+padding-right: 45px;
+}
+
+section{
+margin-top: 15px;
+background-color: rgb(255, 255, 255);
+width: 100%;
+padding: 20px;
+border-radius: 10px;
+transition: all .5s;
+border: solid 1px rgb(151, 151, 151);
+margin: 10px;
+padding-right: 0px;
+
+backdrop-filter: blur(10px);
+z-index: 2000;
+
+&:hover{
+transform: translateY(-2px);
+}
+
+> h1{
+display: flex;
+font-size: 30px;
+margin-bottom: 5px;
+align-items: center;
+gap: 10px;
+}
+
+> h2{
+margin-bottom: 15px;
+}
+
+> .imgs{
+margin-bottom: 15px;
+white-space: nowrap;
+overflow-x: scroll;
+transition: all .5s;
+margin-right: 20px;
+transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+&::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.137);
+    border-radius: 50px;
+}
+
+&::-webkit-scrollbar{
+    display: block;
+    background-color: rgba(255, 255, 255, 0);
+    height: 5px;
+}
+
+> img{
+width: 300px;
+border-radius: 30px;
+}
+}
+
+> b{
+border-radius: 7px;
+margin-top: 100px;
+padding-left: 4px;
+padding-right: 4px;
+overflow-x: hidden;
+color: black;
+
+cursor: pointer;
+border: solid 1px black;
+transition: all .5s;
+
+&::after{
+    content: attr(count)
+}
+
+&:hover{
+    border: solid 1px $blue;
+    color: $blueAlpha;
+}
+
+&.reaction{
+    border: solid 1px $blue;
+    background-color: $blueAlpha;
+    color: white;
+
+    &:hover{
+        border: solid 1px $blue;
+    }
+}
+}
+
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    > img{
+        border-radius: 100%;
+        width: 40px;
+        cursor: pointer;
+    }
+}
+
+h1 > img{
+    width: 35px;
+}
+
+h2 > img{
+    width: 20px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    nav[id=follower]{
+        display: none;
+    }
+    // article{
+    // }
+}
+
+@media (min-width: 1000px) {
+    article{
+        width: 60%;
+        margin-right: 30px;
+        margin-left: 10px;
+        margin-left: $navmg;
+    
+    }
+}

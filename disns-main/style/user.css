@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    overflow-x: hidden;
+    --backgroundColor:rgb(231, 231, 231);
+    --perple: rgb(132, 0, 255);
+    --blue: rgb(0, 140, 255);
+    --blueAlpha: rgba(0, 140, 255, 0.473);
+    --nav: 300px;
+    --navmg: calc(var(--nav) + 500);
+    }
+
+
+
+body{
+    background-color: var(--backgroundColor);
+}
+
+section#info-1{
+    display: flex;
+    align-items: center;
+
+    > img{
+        margin: 50px;
+        border-radius: 100%;
+        /* border: solid 10px --perple; */
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.253);
+    }
+    > article > h1{
+        font-size: 50px;
+    }
+}
+
+div#status{
+    display: flex;
+    align-items: center;
+}
+
+section#info-2{
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 10px;
+
+    > b{
+        /* display: flex; */
+        justify-items: center;
+        background-color: white;
+        border-radius: 20px;
+        font-size: 40px;
+        padding: 10px;
+        &::after{
+            content: '명';
+        }
+
+        > img{
+            width: 50px;
+        }
+    }
+}
+
+
+
+
+div > img{
+    width: 21px;
+}
+
+h1 > img{
+    width: 40px;
+}
+
+h2 > img{
+    width: 25px;
+}
+
+
+::-webkit-scrollbar{
+    display: none;
+}

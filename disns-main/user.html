@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인패이지</title>
+    <link rel="stylesheet" href="style/user.css">
+</head>
+<body>
+    <header>
+        <h1>DISNS</h1>
+        <nav>
+            <a href="userSet.php?action=login">login</a>
+            <a href="userSet.php?action=logout">logout</a>
+        </nav>
+    </header>
+    <div style="margin-bottom: 75px;"></div>
+    
+    <style>
+    
+        header{
+            position: fixed;
+            display: flex;
+            z-index: 999999;
+            
+            height: 75px;
+            width: 100%;
+            background-color: rgb(132, 0, 255);
+            align-items: center;
+
+            box-shadow: 0px -3px 10px 0px black;
+        }
+    
+        header > h1{
+            color: white;
+            margin-left: 100px;
+            font-size: 40px;
+        }
+    
+        nav > a{
+            padding-left: 50px;
+            color: white;
+            text-decoration: none;
+        }
+    
+    </style>
+    <main>
+        <section id="info-1">
+            <img src="https://images-ext-1.discordapp.net/external/aa_bfM2ExJjwecgrOThs_AzVRwOcOXqATqP1qCvrKGQ/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/577266050769485844/edb37a0f91e84d8204a1458bb97d3317.png"/>
+            <article>
+                <div id="status">🟢 온라인</div>
+                <h1>5-23#9999</h1><br><h2>나는 5-23이 다ㅏㅏㅏ(아님말고) 🎃</h2>
+            </article>
+        </section>
+
+        <section id="info-2">
+            <b img="{emoji_url:inv}">{emoji:inv}100000</b>
+        </section>
+
+
+</body>
+</html>
+
+
+<script
+src="https://code.jquery.com/jquery-3.6.1.min.js"
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+crossorigin="anonymous"></script>
+
+<script src="https://twemoji.maxcdn.com/v/14.0.2/twemoji.min.js" integrity="sha384-32KMvAMS4DUBcQtHG6fzADguo/tpN1Nh6BAJa2QqZc6/i0K+YPQE+bWiqBRAWuFs" crossorigin="anonymous"></script>
+<script>twemoji.parse(document.body)</script>
+<script src="script/index.js"></script>
+<script src="apis/emoji.js"></script>

@@ -1,0 +1,137 @@
+body{
+    background-color: var(--backgroundColor);
+}
+
+
+
+*{
+    overflow-x: hidden;
+}
+
+main{
+    display: flex;
+}
+
+.chat-right{
+    float: right;
+    margin-top: 50px;
+    margin-right: 50px;
+
+    width: 500px;
+    height: 500px;
+    border-radius: 100% 100% 30px 100%;
+
+
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+
+    font-size: 50px;
+    font-weight:bold;
+    
+    background-image: linear-gradient(45deg , rgb(153, 0, 255) , rgb(0, 174, 255));
+}
+
+.chat-left{
+    display: grid;
+    margin-top: 50px;
+    margin-left: 50px;
+
+    width: 500px;
+    height: 500px;
+    border-radius: 100% 100% 100% 30px;
+
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+
+    font-size: 50px;
+    font-weight:bold;
+
+    background-image: linear-gradient(45deg , rgb(0, 174, 255) , rgb(153, 0, 255));
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+article{
+    width: 100%;
+    /* margin-left: 150px;
+    margin-top: 200px; */
+    color: white;
+
+    > h1{
+        margin-bottom: 10px;
+    }
+}
+
+
+aside{
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    float: right;
+
+    z-index: 2000;
+
+    background-image: linear-gradient(45deg , rgba(0, 174, 255 , .5) , rgba(153, 0, 255 , .5));
+    
+
+    border-radius: 2em;
+
+    margin-top: 80px;
+    margin-right: 90px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    color: white;
+
+    transform-style: preserve-3d;
+    transform: translateZ(200px) , perspective(1000px);
+}
+
+
+section{
+    position: relative;
+    width: 1000px;
+    height: 500px;
+
+    z-index: 2000;
+
+    background-image: linear-gradient(45deg , rgba(0, 174, 255 , .5) , rgba(153, 0, 255 , .5));
+    
+
+    border-radius: 2em;
+
+    margin: 0 auto;
+    margin-top: 1000px;
+
+    backdrop-filter: blur(10px);
+    color: white;
+
+    transform-style: preserve-3d;
+    transform: translateZ(200px) , perspective(1000px);
+
+    > h1{
+        padding: 50px;
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+    
+        /* transform: translateX(-100px); */
+    
+        width: 100px;
+        height: 100px;
+        z-index: -500;
+    
+        background-image: linear-gradient(45deg , rgb(0, 174, 255) , rgb(153, 0, 255));
+    
+    }
+}
+
+
+h1{
+    font-size: 40px;
+}
